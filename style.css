@@ -1,0 +1,109 @@
+/* Reset default margins and paddings for all elements, set box-sizing to border-box, and use a cursive font-family */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+/* Styling for the body element */
+body {
+    width: 100vw; /* Full viewport width */
+    min-height: 100vh; /* Minimum height of the full viewport */
+    height: 100%; /* Full height */
+    margin: auto; /* Center the body content */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    text-align: center; /* Center text */
+    line-height: 2.3; /* Set line height */
+    /* background: linear-gradient(rgb(0, 58, 86), rgb(179, 196, 200), rgb(53, 29, 114)); Background gradient */
+    background: linear-gradient(rgb(24, 54, 69), rgb(148, 209, 223), rgb(60, 42, 105));
+    background-image: url('bg\ \(1\).jpg');
+}
+
+/* Main game-container for the game */
+#game-container {
+    width: 35rem; /* Fixed width */
+}
+
+/* game-container for the cards */
+#cards {
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow wrapping of children */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+}
+
+/* Styling for the card elements (both hidden and revealed) */
+.box, .active-box {
+    /* background-color: rgb(41, 156, 156); Background color for hidden cards */
+    background-color: blueviolet;
+    width: 6rem; /* Fixed width */
+    height: 6rem; /* Fixed height */
+    margin: 0.5rem 1rem; /* Margin around cards */
+    border-radius: 20px; /* Rounded corners */
+    filter: drop-shadow(4px 4px 4px rgb(23, 23, 23)); /* Shadow effect */
+}
+
+/* Additional styling for revealed cards */
+.active-box {
+    background-color: rgb(237, 145, 246); /* Background color for revealed cards */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    filter: drop-shadow(8px 8px 8px #7ad232); /* Stronger shadow effect */
+}
+
+/* Animation for flipping the card */
+.flip {
+    animation: flip 0.5s linear; /* Apply the flip animation */
+}
+
+/* Styling for the emoji inside the cards */
+.emoji {
+    font-size: 3rem; /* Large font size for emojis */
+}
+
+/* game-container for attempts and score */
+#at {
+    display: flex; /* Use flexbox */
+    justify-content: space-evenly; /* Distribute space evenly */
+    align-items: center; /* Center children vertically */
+}
+
+/* Styling for the restart button */
+#restart {
+    font-size: 1.5rem; /* Font size */
+    padding: 0.5rem 1rem; /* Padding */
+    border-radius: 17px; /* Rounded corners */
+    /* background-color: rgb(17, 255, 0); /*Background color */
+    background-color: aqua;
+    box-shadow: 2px 3px 5px black; /* Shadow effect */
+}
+
+/* Keyframes for the flip animation */
+@keyframes flip {
+    0% {
+        transform: rotatey(90deg); /* Rotate halfway at the start */
+    }
+}
+
+/* Media query for small screens (max width 540px) */
+@media screen and (max-width: 540px) {
+    #game-container {
+        width: 100vw; /* Full viewport width */
+    }
+}
+
+/* Media query for smaller screens (max width 515px) */
+@media screen and (max-width: 515px) {
+    #game-container {
+        width: 90vw; /* Slightly reduced viewport width */
+    }
+    .box, .active-box {
+        width: 4rem; /* Smaller width for cards */
+        height: 4rem; /* Smaller height for cards */
+    }
+}
